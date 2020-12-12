@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HW6Shukla_Soemitro">
-        <activity android:name=".Options"></activity>
+        <activity android:name=".CourseList"></activity>
+        <activity android:name=".Calendar" />
+        <activity android:name=".Departments" />
+        <activity android:name=".Options" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

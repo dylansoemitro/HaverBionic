@@ -2,6 +2,7 @@ package com.example.hw6shukla_soemitro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -34,9 +35,30 @@ public class Options extends AppCompatActivity {
         listView_options.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(optionArray.get(position).equals("Departments")){
+                    openDepartments();
+                }
+                else if(optionArray.get(position).equals("Courses (Calendar View)")){
+                    openCalendar();
+                }
+                else{
+                    openCourseList();
+                }
                 Toast.makeText(Options.this, "clicked item"+position+" "+optionArray.get(position), Toast.LENGTH_SHORT).show();
             }
         });
 
+    }
+    public void openDepartments(){
+        Intent DepartmentsIntent = new Intent(this, Departments.class);
+        startActivity(DepartmentsIntent);
+    }
+    public void openCalendar(){
+        Intent CalendarIntent = new Intent(this, Calendar.class);
+        startActivity(CalendarIntent);
+    }
+    public void openCourseList(){
+        Intent CourseListIntent = new Intent(this, CourseList.class);
+        startActivity(CourseListIntent);
     }
 }
